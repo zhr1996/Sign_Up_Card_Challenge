@@ -1,14 +1,112 @@
-.list_item {
-  margin: 0.6em 0;
-  opacity: 1.65;
+/* Select all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.button {
-  background-color: hsl(71, 73%, 54%);
+/* Declare a custome propery on the :root pesudo-class and use it throughout the document */
+.root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+html {
+  height: 100%;
+}
+body {
+  font-family: "Karla";
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(204, 43%, 93%);
+  padding: 150px 40px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 640px;
+  border-radius: 0.5em;
+
+  /* box-shadow: 3em; */
+}
+
+.top-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  padding: 30px;
+}
+
+.top-container h1 {
+  color: hsl(179, 62%, 43%);
+  margin-bottom: 20px;
+}
+
+.top-container h2 {
+  color: hsl(71, 73%, 54%);
+  margin-bottom: 20px;
+}
+
+.top-container p {
+  color: hsl(218, 22%, 67%);
+  line-height: 1.5em;
+}
+
+.bottom-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.bottom-left {
+  width: 50%;
+  background-color: hsl(179, 62%, 43%);
+  padding: 2em;
   color: hsl(204, 43%, 93%);
+  border-bottom-left-radius: 0.5em;
+}
+
+.bottom-left h2 {
+  margin-bottom: 1.2em;
+}
+.bottom-left p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.1em;
+}
+.bottom-left .price {
+  font-size: 2em;
+  margin-right: 0.4em;
+}
+.bottom-left span:nth-child(2) {
+  opacity: 0.5;
+}
+.bottom-left button {
+  background-color: hsl(71, 73%, 54%);
+  color: white;
   display: block;
   width: 100%;
-  margin-top: 4em;
+  margin-top: 2em;
   padding: 1em;
   text-align: center;
   font-size: 16px;
@@ -16,4 +114,39 @@
   font-family: inherit;
   border: none;
   border-radius: 0.5em;
+}
+.bottom-right {
+  width: 50%;
+  padding: 2em;
+  background-color: hsl(179, 62%, 43%);
+  opacity: 0.7;
+  /* padding: 3em; */
+  color: hsl(204, 43%, 93%);
+  border-bottom-right-radius: 0.5em;
+}
+
+@media (max-width: 375px) {
+  .bottom-container {
+    flex-direction: column;
+  }
+  .bottom-left {
+    width: 100%;
+  }
+  .bottom-right {
+    width: 100%;
+  }
+}
+
+.bottom-right ul {
+  list-style: none;
+  padding-left: 0;
+  opacity: 0.7;
+}
+
+.bottom-right ul li:nth-child(1) {
+  margin-top: 1.2em;
+}
+.bottom-right ul li {
+  margin: 0.3em 0;
+  opacity: 1.65;
 }
