@@ -1,0 +1,19 @@
+.list_item {
+  margin: 0.6em 0;
+  opacity: 1.65;
+}
+
+.button {
+  background-color: hsl(71, 73%, 54%);
+  color: hsl(204, 43%, 93%);
+  display: block;
+  width: 100%;
+  margin-top: 4em;
+  padding: 1em;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.5em;
+}
